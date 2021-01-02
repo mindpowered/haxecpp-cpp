@@ -12,6 +12,7 @@ cc_library(
   hdrs = [
     'src/main_hook.h',
   ],
+  deps = ["//extern/hxcpp:hxcpp"],
 )
 
 cc_library(
@@ -25,4 +26,8 @@ cc_library(
   hdrs = [
     'src/haxe_thread.h',
   ],
+  srcs = [
+    'src/haxe_thread.cpp',
+    'src/haxe_thread.h',
+  ]
 )
