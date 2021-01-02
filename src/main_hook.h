@@ -1,3 +1,5 @@
+#include <hxcpp.h>
+
 /**
  * This macro must be placed once in main() before any haxe-generated classes are used.
  */

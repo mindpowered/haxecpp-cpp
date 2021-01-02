@@ -5,13 +5,19 @@
  * in case the garbage collecor decides to run on allocation
  */
 
-#include <atomic>
 #include <memory>
 #include <mutex>
 #include <queue>
 #include <thread>
+#include <atomic>
+#include <functional>
 #include <condition_variable>
 #include <haxecpp/main_hook.h>
+
+// C style wrapper
+
+void run_haxe(std::function<void()> fun);
+
 
 /**
  * run all haxe stuff in one thread
@@ -140,10 +146,3 @@ private:
     }
 };
 
-// C style wrapper
-
-void run_haxe(std::function<void()> fun)
-{
-    HaxeThread* ht = HaxeThread::getInstance();
-    ht->run(fun);
-}
